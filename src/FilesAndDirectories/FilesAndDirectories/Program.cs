@@ -1,8 +1,6 @@
 ﻿void Spam()
 {
-    bool playerChoice;
-
-    while (playerChoice = true)
+    while (true)
     {
         Console.WriteLine("Choose action: 1-create directories, 2- delete all");
         int playerChoiceAction = Convert.ToInt32(Console.ReadLine());
