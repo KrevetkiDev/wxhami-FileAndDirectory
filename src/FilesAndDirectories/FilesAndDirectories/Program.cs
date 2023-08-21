@@ -9,7 +9,7 @@
             case 1:
                 for (int i = 0; i < 100; i++)
                 {
-                    Directory.CreateDirectory(@"C:\Users\d1810\Рабочий стол\sorry, it's a prank" + i);
+                    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "sorry, it's a prank" + i);
                 }
 
                 break;
