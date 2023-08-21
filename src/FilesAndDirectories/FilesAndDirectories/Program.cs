@@ -1,3 +1,33 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿void Spam()
+{
+    while (true)
+    {
+        Console.WriteLine("Choose action: 1 - create directories, 2 - delete all");
+        int playerChoiceAction = Convert.ToInt32(Console.ReadLine());
+        switch (playerChoiceAction)
+        {
+            case 1:
+                for (int i = 0; i < 100; i++)
+                {
+                    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "sorry, it's a prank" + i);
+                }
 
-Console.WriteLine("Hello, World!");
+                break;
+
+            case 2:
+                DirectoryInfo directoryInfo = new DirectoryInfo(@"C:\Users\d1810\Рабочий стол\");
+                var directories = directoryInfo.GetDirectories("sorry, it's a prank*");
+
+                foreach (var directory in directories)
+                {
+                    directory.Delete();
+                }
+
+                break;
+
+            default:
+                Console.WriteLine("Incorrect comand");
+                break;
+        }
+    }
+}
